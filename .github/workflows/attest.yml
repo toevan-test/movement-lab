@@ -1,0 +1,20 @@
+name: attest
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: mkdir -p dist && printf 'movement-lab %s\n' "${GITHUB_REF_NAME}" > dist/app.txt
+      - uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: dist/app.txt
+      - run: gh release create "$GITHUB_REF_NAME" dist/app.txt --notes "O30 attested release" --repo "$GITHUB_REPOSITORY"
+        env:
+          GH_TOKEN: ${{ github.token }}
