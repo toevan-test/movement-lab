@@ -1,1 +1,2 @@
 s3 direct push d1
+s4 direct push X just before the rebase merge
