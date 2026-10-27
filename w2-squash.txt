@@ -1,1 +1,2 @@
 w2 squash one
+w2 squash two
