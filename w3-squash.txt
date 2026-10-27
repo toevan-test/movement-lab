@@ -1,1 +1,2 @@
 w3 squash one
+w3 squash two
