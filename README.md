@@ -6,7 +6,7 @@ evidence ledger for this repository. Each commit adds exactly one evidence run:
     records/<head_sha>/<record_id>.json   the canonical record bytes, VERBATIM
 
 A record of a KIND other than a verdict (change_record, unreviewed_change, control_change, capture_gap,
-capture_started, release_record, deployment_record, capture_reading) sits in the same chain and is filed under the sha of its subject commit, or, when it has
+capture_started, release_record, deployment_record, capture_reading, inventory_record, production_branch_designation) sits in the same chain and is filed under the sha of its subject commit, or, when it has
 none, under _<kind>: records/_capture_started/<record_id>.json. The same applies to attestations/.
 
 To verify independently (Toevan not required):
@@ -51,7 +51,7 @@ the record's bytes). The envelope file is one line of JSON, as Toevan writes it;
 
 A record of a kind other than a verdict is signed with the same key and envelope but its own predicate type, for
 example https://toevan.com/attestation/change-record/v1 (change-record, unreviewed-change, control-change,
-capture-gap, capture-started, release-record, deployment-record, capture-reading), and the same lines check it. It states what Toevan recorded and
+capture-gap, capture-started, release-record, deployment-record, capture-reading, inventory-record, production-branch-designation), and the same lines check it. It states what Toevan recorded and
 binds the statement to the record by its hash.
 
 Toevan's public keys, current and retired, are published at https://moaningly-unusual-camilla.ngrok-free.dev/v1/public/evidence/keys
