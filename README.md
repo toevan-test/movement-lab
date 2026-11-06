@@ -54,12 +54,12 @@ example https://toevan.com/attestation/change-record/v1 (change-record, unreview
 capture-gap, capture-started, release-record, deployment-record, capture-reading, inventory-record, production-branch-designation), and the same lines check it. It states what Toevan recorded and
 binds the statement to the record by its hash.
 
-Toevan's public keys, current and retired, are published at https://moaningly-unusual-camilla.ngrok-free.dev/v1/public/evidence/keys
+Toevan's public keys, current and retired, are published at https://christians-mac-studio.tail1b5fda.ts.net/v1/public/evidence/keys
 (each with its key id, the sha256 of the key's DER). `keys/<key_id>.pub` in this branch is
 a convenience copy of the key that signed an attestation: trust it only after its key id matches the
 published list, never because it sits in this branch. Take toevan.pub from there:
 
-    curl -o toevan.pub https://moaningly-unusual-camilla.ngrok-free.dev/v1/public/evidence/keys/<key_id>.pem
+    curl -o toevan.pub https://christians-mac-studio.tail1b5fda.ts.net/v1/public/evidence/keys/<key_id>.pem
 
 `attestations/<head_sha>/<record_id>.rekor.json` is the transparency-log proof for that
 attestation. If the organization anchors in its OWN log, `rekor-logs/<log_id>.pub` carries that
